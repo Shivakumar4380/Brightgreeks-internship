@@ -1,0 +1,45 @@
+
+
+import numpy as np
+import json
+# Create array with numeric data
+array = np.array([[10, 20, 30], [12, 14, 16], [15, 30, 45]])
+
+# Convert  NumPy to list
+list1 = array.tolist()
+
+# path t0 JSON file
+json_file_path = 'json.data'
+
+# Write  list to JSON file
+with open(json_file_path, 'w') as json_file:
+    json.dump(list1, json_file)
+
+# Print the JSON file has been written
+print(f"Data has been written to {json_file_path}")
+
+
+
+import numpy as np
+
+matrix = np.array([[8,16, 24], [7, 14, 21], [10, 20, 30]])
+
+# vector with 3 elements
+vector = np.array([1, 2, 3])
+
+# Print original vector 'v'
+print("Original vector:")
+print(vector)
+
+# Print original matrix 'm'
+print("Original matrix:")
+print(matrix)
+
+result = np.empty_like(matrix)
+
+# loop
+for i in range(3):
+    result[i, :] = matrix[i, :] + vector
+
+print("\nAfter adding the vector v to each row of the matrix m:")
+print(result)
